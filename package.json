@@ -2,21 +2,21 @@
   "name": "nodejs-typescript-koa",
   "version": "1.0.0",
   "description": "NodejsTypeScriptKoa",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": "https://github.com/krlls/Nodejs-TypeScript-Koa-boilerplate.git",
   "author": "ksmi",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "build": "rimraf dist tsc",
+    "build": "rimraf dist && tsc",
     "start": "yarn build && node dist/index.js",
     "lint": "tslint -p src",
-    "lint-fix": "tslint -p src --fix"
+    "lint-fix": "tslint -p src --fix",
+    "build:docker": "docker build -t testnodeproject .",
+    "run:docker": "docker run -p 3000:3000 testnodeproject"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "@types/hapi__joi": "^17.1.0",
-    "@types/mongoose": "^5.7.20",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
     "koa-jwt": "^3.6.0",
@@ -25,6 +25,8 @@
     "mongoose": "^5.9.14"
   },
   "devDependencies": {
+    "@types/hapi__joi": "^17.1.0",
+    "@types/mongoose": "^5.7.20",
     "@types/koa": "^2.11.3",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.4.1",
