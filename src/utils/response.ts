@@ -15,7 +15,7 @@ export const respond200json = <A extends string, B>(ctx: RouterContext, body?: R
   ctx.body = body
 }
 
-export const respond200plain = <A extends string, B>(ctx: RouterContext, body: Record<A, B>) => {
+export const respond200plain = (ctx: RouterContext, body: string) => {
   ctx.type = 'text/plain'
   ctx.body = body
 }
