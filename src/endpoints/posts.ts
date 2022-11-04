@@ -1,13 +1,13 @@
-import { Context } from 'koa'
+import { RouterContext } from 'koa-router'
+
+import { Posts } from '../types'
 
 import { respond400, respond200json } from '../utils/response'
-import { Posts } from '../types'
 import { PostsStore } from '../store/PostsStore'
 import { postsListReq } from '../validators/postsSchemes'
 import { validate } from '../utils/validate'
 
-
-export const list = async (ctx: Context, params: Posts.List.Req) => {
+export const list = async (ctx: RouterContext, params: Posts.List.Req) => {
   if (validate(postsListReq, params)) {
     return respond400(ctx)
   }

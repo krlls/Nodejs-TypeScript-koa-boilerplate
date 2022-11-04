@@ -1,9 +1,8 @@
 export type ServerConfig = {
-  port: number
+  port: number,
 }
 
 export namespace Posts {
-
   export type Post = {
     id: number,
     title: string,
@@ -11,10 +10,8 @@ export namespace Posts {
   }
 
   export namespace List {
-
     export type Req = {
-      id: number
+      id: number,
     }
   }
-
 }
